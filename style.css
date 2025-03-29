@@ -1,60 +1,53 @@
+/* Basic styling for the page */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #111;
-    margin: 0;
-    padding: 0;
-    color: #fff;
-    text-align: center;
+  font-family: Arial, sans-serif;
+  background-color: #111;
+  margin: 0;
+  padding: 20px;
+  color: #fff;
+  text-align: center;
 }
 
 h1 {
-    margin-top: 20px;
-    font-size: 36px;
-    color: #4caf50;
+  margin-bottom: 20px;
+  font-size: 32px;
+  color: #4caf50;
 }
 
+/* Grid container for the cubes */
 .game-container {
-    display: grid;
-    grid-template-columns: repeat(8, 100px);
-    grid-template-rows: repeat(8, 100px);
-    gap: 15px;
-    justify-content: center;
-    margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(8, 120px);
+  grid-auto-rows: 120px;
+  gap: 15px;
+  justify-content: center;
 }
 
+/* Cube style for each game */
 .game {
-    background-color: #333;
-    border: 3px solid #4caf50;
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 16px;
-    font-weight: bold;
-    color: #fff;
-    cursor: pointer;
-    transition: transform 0.2s, box-shadow 0.2s;
+  background-color: #333;
+  border: 3px solid #4caf50;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  user-select: none;
 }
 
+/* Cube hover effect */
 .game:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 20px rgba(76, 175, 80, 0.8);
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(76, 175, 80, 0.8);
 }
 
-@media screen and (max-width: 1200px) {
-    .game-container {
-        grid-template-columns: repeat(6, 100px);
-    }
-}
-
-@media screen and (max-width: 900px) {
-    .game-container {
-        grid-template-columns: repeat(4, 100px);
-    }
-}
-
-@media screen and (max-width: 600px) {
-    .game-container {
-        grid-template-columns: repeat(2, 100px);
-    }
+/* Different style for placeholder cubes */
+.game.coming-soon {
+  background-color: #555;
+  border-style: dashed;
+  cursor: default;
 }
