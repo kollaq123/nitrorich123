@@ -1,3 +1,4 @@
 function openGame(gameUrl) {
-    window.location.href = gameUrl;
+  // Navigate to the selected game URL
+  window.location.href = gameUrl;
 }
